@@ -24,23 +24,27 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o 
 
 ## 2/ Intall GitLab Docker Image
 *Step1: Set path to /srv/gitlab*
+
 >`export GITLAB_HOME=/srv/gitlab`
 
 *Step2: Install using Docker Engine*
->`sudo docker run --detach \
-  --hostname localhost \
-  --publish 443:443 --publish 80:80 --publish 22:22 \
-  --name gitlab \
-  --restart always \
-  --volume $GITLAB_HOME/config:/etc/gitlab \
-  --volume $GITLAB_HOME/logs:/var/log/gitlab \
-  --volume $GITLAB_HOME/data:/var/opt/gitlab \
-  --shm-size 256m \
-  gitlab/gitlab-ce:latest`
+
+>`sudo docker run --detach \`
+>` --hostname localhost \`
+>`  --publish 443:443 --publish 80:80 --publish 22:22 \`
+>`  --name gitlab \`
+>`  --restart always \`
+>`  --volume $GITLAB_HOME/config:/etc/gitlab \`
+>`  --volume $GITLAB_HOME/logs:/var/log/gitlab \`
+>`  --volume $GITLAB_HOME/data:/var/opt/gitlab \`
+>`  --shm-size 256m \`
+>`  gitlab/gitlab-ce:latest`
 
 *Step3:Login*
 *URL: http://localhost.com OR http://Ip_address.com*
 
 >Account: root
-Password default
+
+Password default of root 
+
 > `sudo docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password`
