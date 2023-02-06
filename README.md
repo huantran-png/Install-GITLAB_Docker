@@ -33,11 +33,11 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o 
 
 >` --hostname localhost \`
 
->`  --publish 443:443 --publish 80:80 --publish 22:22 \`
+>` --publish 443:443 --publish 80:80 --publish 22:22 \`
 
->`  --name gitlab \`
+>` --name gitlab \`
 
->`  --restart always \`
+>` --restart always \`
 
 >`  --volume $GITLAB_HOME/config:/etc/gitlab \`
 
