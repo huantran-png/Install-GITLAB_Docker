@@ -37,8 +37,10 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o 
   --volume $GITLAB_HOME/data:/var/opt/gitlab \
   --shm-size 256m \
   gitlab/gitlab-ce:latest`
-*Step3: Login *
+
+*Step3:Login*
 *URL: http://localhost.com OR http://Ip_address.com*
+
 >Account: root
 Password default
 > `sudo docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password`
