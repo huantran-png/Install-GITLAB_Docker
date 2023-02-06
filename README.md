@@ -7,20 +7,27 @@
 ## 2/ Install Docker using repository
 *Step1: Update the apt package index and install packages to allow apt to use a repository over HTTPS:*
 >`sudo apt-get update`
->`sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release`
+
+>`sudo apt-get install \`
+
+>`    ca-certificates \`
+
+>`    curl \`
+
+>`    gnupg \`
+
+>`    lsb-release`
 
 *Step2:Add Docker’s official GPG key*
->`sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg`
+>`sudo mkdir -p /etc/apt/keyrings`
+>`curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg`
 
 *Step3:Use the following command to set up the repository*
->echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+>`echo \`
+
+>`  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \`
+
+>`  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list /dev/null`
 
 ## 2/ Intall GitLab Docker Image
 *Step1: Set path to /srv/gitlab*
@@ -54,6 +61,6 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o 
 
 >Account: root
 
-Password default of root 
+Password default of root save in path /etc/gilab/inital_root_password
 
 > `sudo docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password`
